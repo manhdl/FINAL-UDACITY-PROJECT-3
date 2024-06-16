@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../udagram-frontend/src/app/auth/auth-login/auth-login.component.scss"
+    ],
+    "names": [],
+    "file": "auth-login.component.css"
+}

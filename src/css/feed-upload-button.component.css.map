@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../udagram-frontend/src/app/feed/feed-upload/feed-upload-button/feed-upload-button.component.scss"
+    ],
+    "names": [],
+    "file": "feed-upload-button.component.css"
+}
