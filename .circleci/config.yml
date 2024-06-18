@@ -24,3 +24,10 @@ jobs:
             docker push manhdl/udagram-api-feed
             docker push manhdl/reverseproxy
             docker push manhdl/udagram-frontend
+
+workflow:
+  default:
+    jobs:
+      - lint-app
+      - build-docker:
+          requires: [lint-app] 
