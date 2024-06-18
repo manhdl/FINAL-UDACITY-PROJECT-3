@@ -25,7 +25,7 @@ jobs:
             docker push manhdl/reverseproxy
             docker push manhdl/udagram-frontend
 
-workflow:
+workflows:
   default:
     jobs:
       - lint-app
