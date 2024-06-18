@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  lint-app:
+    docker:
+      - image: circleci/node:16
+    steps:
+      - checkout
+  build-docker:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Build docker container for each microservice
+          command: |
+            echo "----- The images is buiding -----"
+            docker build -t manhdl/udagram-api-user ./udagram-api-user
+            docker build -t manhdl/udagram-api-feed ./udagram-api-feed
+            docker build -t manhdl/reverseproxy ./reverseproxy
+            docker build -t manhdl/udagram-frontend ./udagram-frontend
+
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+            docker push manhdl/udagram-api-user
+            docker push manhdl/udagram-api-feed
+            docker push manhdl/reverseproxy
+            docker push manhdl/udagram-frontend
